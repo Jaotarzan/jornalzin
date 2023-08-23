@@ -97,13 +97,21 @@ a:hover::after {
 main {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
 }
 
 @keyframes rotacao {
-    0% {rotate: 0deg;}
-    50% {rotate: 180deg;}
-    100% {rotate: 360deg;}
+    0% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: 180deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
 }
 
 aside img {
@@ -133,11 +141,15 @@ article h2 {
 
 article p {
     color: #DDDDDD;
-    font-size: small;
+    font-size: medium;
 }
 
 article img {
+    cursor: pointer;
     margin-bottom: 0;
+    border-radius: 5px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    -webkit-mask-image: linear-gradient(to top, transparent 0.5%, black 100%);
 }
 
 section {
@@ -147,76 +159,10 @@ section {
 }
 
 .noticias {
-    background-color: #292929;
-    border-radius: 20px;
-    box-shadow: 0 1% 3% rgba(0, 0, 0, 0.2);
-    padding: 4%;
-    margin: 0 auto;
-    max-width: 1000px;
-    text-align: justify;
-    line-height: 1.8;
-    grid-template-columns: 3fr 1fr;
     margin: 20px;
-}
-
-/*carrossel*/
-.slider {
-    display: block;
-    height: 60%;
-    width: 100%;
-    margin: auto;
-    margin-top: 20px;
-    position: relative;
-}
-
-.slider li {
-    list-style: none;
-    position: absolute;
-}
-
-.slider img {
-    margin: auto;
-    height: 100%;
-    width: 100%;
-    vertical-align: top;
-}
-
-.slider input {
-    display: none;
-}
-
-.slider label {
-    background-color: #000;
-    bottom: 10px;
-    cursor: pointer;
-    display: block;
-    height: 10px;
-    position: absolute;
-    width: 10px;
-    z-index: 10;
-}
-
-.slider li:nth-child(1) label {
-    left: 10px;
-}
-
-.slider li:nth-child(2) label {
-    left: 40px;
-}
-
-.slider li:nth-child(3) label {
-    left: 70px;
-}
-
-.slider img {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.slider li input:checked ~ img {
-    opacity: 1;
-    visibility: visible;
-    z-index: 10;
+    max-width: 700px;
+    text-align: center;
+    max-height: 500px;
 }
 
 /* Rodapé */
@@ -239,5 +185,29 @@ footer {
     .logo-container img {
         margin-right: 0;
         margin-bottom: 20px;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        background-color: #000000;
+        text-align: center;
+        border-bottom: 5px solid #FF5757;
+    }
+
+    .retorno {
+        text-align: start;
+        margin-left: 50px;
+        grid-row: 1 /span 2
+    }
+
+    article {
+        max-height: none;
+    }
+
+    article img {
+        width: 20vh;
+        height: auto;
     }
 }
